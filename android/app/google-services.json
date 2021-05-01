@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "408878544747",
+    "project_id": "hmart-181e1",
+    "storage_bucket": "hmart-181e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408878544747:android:1b5d346a5e87fabe9fbe2e",
+        "android_client_info": {
+          "package_name": "com.ishan.hmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408878544747-20hf62vt5uo8lc8plbgjcjsagv7k0jhf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ishan.hmart",
+            "certificate_hash": "fa79a66b3b1a5d326ff4b429e9ad57cfe31c1aff"
+          }
+        },
+        {
+          "client_id": "408878544747-4263rop5uif5sidmi1j30qn79rjjpm4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx7z3LDPPOUJ3N8apOAvZ8B-XyPPCGuKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408878544747-4263rop5uif5sidmi1j30qn79rjjpm4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
