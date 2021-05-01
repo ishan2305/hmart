@@ -25,7 +25,7 @@ class DatabaseService {
       String productName, String description, int likes) async {
     print("entered");
 
-    return await productCollection.doc(uid).set({
+    return await productCollection.doc().set({
       'productName': productName,
       'description': description,
       'brandId': uid,
