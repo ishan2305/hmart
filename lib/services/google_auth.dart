@@ -34,7 +34,7 @@ Future<UserCredential> signInWithGoogle(bool isBrand) async {
     assert(user.uid == currentUser.uid);
 
     await DatabaseService(uid: user.uid)
-        .updateUserData(user.uid, user.displayName, user.email, isBrand);
+        .updateUserData(user.uid, user.displayName, user.email, isBrand, "");
     // Once signed in, return the UserCredential
     return authCred;
   }
