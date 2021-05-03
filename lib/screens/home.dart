@@ -1,13 +1,23 @@
+import 'dart:convert';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hmart/models/cart_item.dart';
 import 'package:hmart/services/google_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:hmart/models/cart.dart';
+import 'package:hmart/services/database.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
+
+List<CartItem> cart = [];
+final _auth = FirebaseAuth.instance;
+dynamic user;
 
 class _HomeScreenState extends State<HomeScreen> {
   String search = '';
@@ -102,7 +112,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     IconButton(
                                       icon: Icon(Icons.shopping_cart),
-                                      onPressed: () {},
+                                      onPressed: () async {
+                                        print(document['productName']);
+                                        CartItem cartItem = CartItem(
+                                            productID: document['productName']);
+                                        cart.add(cartItem);
+                                        Cart cartList = Cart(cart: cart);
+                                        String cartListJson =
+                                            jsonEncode(cartList);
+                                        user = _auth.currentUser;
+                                        print("Database");
+                                        print(cartListJson);
+                                        await DatabaseService(uid: user.uid)
+                                            .updateUserData(
+                                                user.uid,
+                                                user.displayName,
+                                                user.email,
+                                                false,
+                                                cartListJson);
+                                      },
                                     ),
                                   ],
                                 ),
